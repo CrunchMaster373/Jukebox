@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="Jukebox.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://use.fontawesome.com/37253272d1.js"></script>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Funsho's JukeBox</h1>
+    <video poster="/Users/olufunshoolagundoye/Desktop/NYCDA/JavascriptBasics/Jukebox/Coffee-Place/MP4/Coffee-Place.mp4" id="bgvid" playsinline autoplay muted loop>
+
+    <source src="/Users/olufunshoolagundoye/Desktop/NYCDA/JavascriptBasics/Jukebox/Coffee-Place/MP4/Coffee-Place.mp4" type="video/mp4">
+    </video>
+
+    <div class="Symbols">
+      <div id="Box">
+        <div id="ShowMusicTitle"> </div>
+        <div id="ShowArtist"> </div>
+      </div>
+      <div id="Controls">
+        <a href="#" id="previous"><i class="fa fa-backward" aria-hidden="true"></i></a>
+        <a href="#" id="pause"><i class="fa fa-pause" aria-hidden="true"></i></a>
+        <a href="#" id="play"><i class="fa fa-play" aria-hidden="true"></i></a>
+        <a href="#" id="stop"><i class="fa fa-stop" aria-hidden="true"></i></a>
+        <a href="#" id="next"><i class="fa fa-forward" aria-hidden="true"></i></a>
+      </div>
+
+      <form action="Jukebox.html" method="post">
+        <input id="songfield" type="mp3" name="" value="" placeholder="Put Your Song Here end with .mp3">
+        <input id="artistfield" type="text" name="" value="" placeholder="Artist">
+        <input id="titlefield" type="text" name="" value="" placeholder="Title">
+        <button id="newsong" type="button" name="button">add song</button>
+      </form>
+    </div>
+
+    <div id= "Songs">
+        <audio id = "MFDoom" src="/Users/olufunshoolagundoye/Desktop/NYCDA/JavascriptBasics/Jukebox/Music/mfdoom-vomitspit.mp3"></audio>
+        <audio id = "KidCudi" src="/Users/olufunshoolagundoye/Desktop/NYCDA/JavascriptBasics/Jukebox/Music/Kid Cudi and Crookers - Day 'n' Night.mp3"></audio>
+        <audio id = "Childish" src="/Users/olufunshoolagundoye/Desktop/NYCDA/JavascriptBasics/Jukebox/Music/Do Ya Like.mp3"></audio>
+        <audio id = "Guns" src="/Users/olufunshoolagundoye/Desktop/NYCDA/JavascriptBasics/Jukebox/Music/Baccano! - Gun's and Roses.mp3"></audio>
+        <audio id = "Magic" src="/Users/olufunshoolagundoye/Desktop/NYCDA/JavascriptBasics/Jukebox/Music/Un Gaou A Oran.mp3"></audio>
+    </div>
+
+
+    <!-- <a href="#" id="play">Play</a>
+    <a href="#" id="pause">Pause</a>
+    <a href="ic_skip_next_black_24px.svg" id="next">Next</a>
+    <a href="#" id="previous">Previous</a>  -->
+
+      <!-- <div id= "Musac">
+        <audio controls>
+          <source src="/Users/olufunshoolagundoye/Desktop/NYCDA/JavascriptBasics/Jukebox/Music/mfdoom-vomitspit.mp3" type="audio/mp3">
+          <source src="/Users/olufunshoolagundoye/Desktop/NYCDA/JavascriptBasics/Jukebox/Music/Kid Cudi and Crookers - Day 'n' Night.mp3" type="audio/mp3">
+          <source src="/Users/olufunshoolagundoye/Desktop/NYCDA/JavascriptBasics/Jukebox/Music/Do Ya Like.mp3" type="audio/mp3">
+          <source src="/Users/olufunshoolagundoye/Desktop/NYCDA/JavascriptBasics/Jukebox/Music/Baccano! - Gun's and Roses.mp3" type="audio/mp3">
+          <source src="/Users/olufunshoolagundoye/Desktop/NYCDA/JavascriptBasics/Jukebox/Music/Un Gaou A Oran.mp3" type="audio/mp3">
+        </audio>
+      </div> -->
+    </div>
+      <script type="text/javascript" src="Jukebox.js"></script>
+  </body>
+</html>
