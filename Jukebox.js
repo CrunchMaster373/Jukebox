@@ -17,11 +17,11 @@ var titleSpot = document.querySelector("#ShowMusicTitle")
 var artistSpot = document.querySelector("#ShowArtist")
 
 var songs = [
-  new Audio("/Users/olufunshoolagundoye/Desktop/NYCDA/JavascriptBasics/Jukebox/Music/mfdoom-vomitspit.mp3"),
-  new Audio("/Users/olufunshoolagundoye/Desktop/NYCDA/JavascriptBasics/Jukebox/Music/Kid Cudi and Crookers - Day 'n' Night.mp3"),
-  new Audio("/Users/olufunshoolagundoye/Desktop/NYCDA/JavascriptBasics/Jukebox/Music/Do Ya Like.mp3"),
-  new Audio("/Users/olufunshoolagundoye/Desktop/NYCDA/JavascriptBasics/Jukebox/Music/Baccano! - Gun's and Roses.mp3"),
-  new Audio("/Users/olufunshoolagundoye/Desktop/NYCDA/JavascriptBasics/Jukebox/Music/Un Gaou A Oran.mp3")
+  new Audio("Jukebox/Music/mfdoom-vomitspit.mp3"),
+  new Audio("Jukebox/Music/Kid Cudi and Crookers - Day 'n' Night.mp3"),
+  new Audio("Jukebox/Music/Do Ya Like.mp3"),
+  new Audio("Jukebox/Music/Baccano! - Gun's and Roses.mp3"),
+  new Audio("Jukebox/Music/Un Gaou A Oran.mp3")
 ]
 
 var titles = [
@@ -142,7 +142,7 @@ newSongButton.addEventListener("click", function(event) {
 
 mfDoom.addEventListener("click", function(event){
   event.preventDefault()
-  var mfdoomusic = new Audio("/Users/olufunshoolagundoye/Desktop/NYCDA/JavascriptBasics/Jukebox/Music/mfdoom-vomitspit.mp3")
+  var mfdoomusic = new Audio("Jukebox/Music/mfdoom-vomitspit.mp3")
   var mfdoomTitle = "Title: " + "Vomitspit"
   var mfdoomArtist = "Artist: " + "MF Doom"
   songs.push(mfdoomusic)
@@ -153,7 +153,7 @@ mfDoom.addEventListener("click", function(event){
 
 kidCudi.addEventListener("click", function(event){
   event.preventDefault()
-  var DayNight = new Audio("/Users/olufunshoolagundoye/Desktop/NYCDA/JavascriptBasics/Jukebox/Music/Kid Cudi and Crookers - Day 'n' Night.mp3")
+  var DayNight = new Audio("Jukebox/Music/Kid Cudi and Crookers - Day 'n' Night.mp3")
   var DayNightTitle = "Title: " + "Day /& Night"
   var DayNightArtist = "Artist: " + "Kid Cudi"
   songs.push(DayNight)
@@ -164,7 +164,7 @@ kidCudi.addEventListener("click", function(event){
 
 Gambino.addEventListener("click", function(event){
   event.preventDefault()
-  var childish = new Audio("/Users/olufunshoolagundoye/Desktop/NYCDA/JavascriptBasics/Jukebox/Music/Do Ya Like.mp3")
+  var childish = new Audio("Jukebox/Music/Do Ya Like.mp3")
   var childishTitle = "Title: " + "Do Ya Like"
   var childishArtist = "Artist: " + "Childish Gambino"
   songs.push(childish)
@@ -175,7 +175,7 @@ Gambino.addEventListener("click", function(event){
 
 Baccono.addEventListener("click", function(event){
   event.preventDefault()
-  var gbaccano = new Audio("/Users/olufunshoolagundoye/Desktop/NYCDA/JavascriptBasics/Jukebox/Music/Baccano! - Gun's and Roses.mp3")
+  var gbaccano = new Audio("Jukebox/Music/Baccano! - Gun's and Roses.mp3")
   var baccanoTitle = "Title: " + "Guns & Roses"
   var baccanoArtist = "Artist: " + "Baccono"
   songs.push(gbaccano)
@@ -186,7 +186,7 @@ Baccono.addEventListener("click", function(event){
 
 Systeme.addEventListener("click", function(event){
   event.preventDefault()
-  var mSysteme = new Audio("/Users/olufunshoolagundoye/Desktop/NYCDA/JavascriptBasics/Jukebox/Music/Un Gaou A Oran.mp3")
+  var mSysteme = new Audio("Jukebox/Music/Un Gaou A Oran.mp3")
   var systemeTitle = "Title: " + "Guns & Roses"
   var systemeArtist = "Artist: " + "Baccano"
   songs.push(mSysteme)
