@@ -1,30 +1,37 @@
 var vid = document.getElementById("bgvid");
-
+//Jukebox HTML elements stored in variables
 var playIcon = document.getElementById("play")
 var pauseIcon = document.getElementById("pause")
 var stopIcon = document.getElementById("stop")
 var nextIcon = document.getElementById("next")
 var prevIcon = document.getElementById("previous")
 var newSongButton = document.querySelector("#newsong")
+var lBrown = document.getElementById("LBrown")
 var mfDoom = document.getElementById("MFDoom")
 var kidCudi = document.getElementById("KidCudi")
 var Gambino = document.getElementById("Childish")
 var Baccono = document.getElementById("Guns")
 var Systeme = document.getElementById("Magic")
-
-var index = [0]
 var titleSpot = document.querySelector("#ShowMusicTitle")
 var artistSpot = document.querySelector("#ShowArtist")
 
+// counter
+var index = [0];
+
 var songs = [
-  new Audio("Jukebox/Music/mfdoom-vomitspit.mp3"),
-  new Audio("Jukebox/Music/Kid Cudi and Crookers - Day 'n' Night.mp3"),
-  new Audio("Jukebox/Music/Do Ya Like.mp3"),
-  new Audio("Jukebox/Music/Baccano! - Gun's and Roses.mp3"),
-  new Audio("Jukebox/Music/Un Gaou A Oran.mp3")
+  new Audio("Music/11 Lady Brown feat. Cise Starr.mp3"),
+  new Audio("Music/mfdoom-vomitspit.mp3"),
+  new Audio("Music/Kid Cudi and Crookers - Day 'n' Night.mp3"),
+  new Audio("Music/Do Ya Like.mp3"),
+  new Audio("Music/Baccano! - Gun's and Roses.mp3"),
+  new Audio("Music/Un Gaou A Oran.mp3")
 ]
 
+//instantiation: jukebox object created, songs pushed into jukebox array
+var jukebox = new Jukebox(songs)
+
 var titles = [
+  "Title: Lady Brown ft. Cise Starr",
   "Title: Vomitspit",
   "Title: Day N Night",
   "Title: Do Ya Like",
@@ -33,15 +40,20 @@ var titles = [
 ]
 
 var artists = [
+  "Artist: Nujabes",
   "Artist: MF Doom",
   "Artist: Kid Cudi",
   "Artist: Childish Gambino",
   "Artist: Baccano",
   "Artist: Magic Systeme"
 ]
-function Jukebox(songs) {
+
+//Jukebox object constructor function: Jukebox object structure & methods
+function Jukebox() {
   this.songs = songs
 }
+
+//setting the button methods
 Jukebox.prototype.play = function() {
   this.songs[index].play()
 }
@@ -76,17 +88,17 @@ Jukebox.prototype.forward = function () {
   this.songs[index].play()
 }
 
-var jukebox = new Jukebox(songs)
-
-
+// button event listeners
 playIcon.addEventListener("click", function(event){
-  event.preventDefault()
-  ShowMusicTitle.innerHTML = titles[index]
-  ShowArtist.innerHTML = artists[index]
-  jukebox.play()
-  playIcon.style.color = "#FF1493"
-  pauseIcon.style.color = "#000000"
-  stopIcon.style.color = "#000000"
+  event.preventDefault();
+  ShowMusicTitle.innerHTML = titles[index];
+  ShowArtist.innerHTML = artists[index];
+  jukebox.play();
+  playIcon.style.color = "#FF1493";
+  pauseIcon.style.color = "#000000";
+  stopIcon.style.color = "#000000";
+  prevIcon.style.color = "#000000";
+  nextIcon.style.color = "#000000";
 })
 
 pauseIcon.addEventListener("click", function(event){
@@ -94,17 +106,21 @@ pauseIcon.addEventListener("click", function(event){
   jukebox.pause()
   ShowMusicTitle.innerHTML = titles[index]
   ShowArtist.innerHTML = artists[index]
-  pauseIcon.style.color = "#FF1493"
-  playIcon.style.color = "#000000"
-  stopIcon.style.color = "#000000"
+  pauseIcon.style.color = "#FF1493";
+  playIcon.style.color = "#000000";
+  stopIcon.style.color = "#000000";
+  nextIcon.style.color = "#000000";
+  prevIcon.style.color= "#000000";
 })
 
 stopIcon.addEventListener("click", function(event) {
   event.preventDefault()
   jukebox.stop()
-  stopIcon.style.color = "#FF1493"
-  playIcon.style.color = "#000000"
-  pauseIcon.style.color = "#000000"
+  stopIcon.style.color = "#FF1493";
+  playIcon.style.color = "#000000";
+  pauseIcon.style.color = "#000000";
+  nextIcon.style.color= "#000000";
+  prevIcon.style.color= "#000000";
 })
 
 nextIcon.addEventListener("click", function(event){
@@ -112,9 +128,12 @@ nextIcon.addEventListener("click", function(event){
   jukebox.forward()
   ShowMusicTitle.innerHTML = titles[index]
   ShowArtist.innerHTML = artists[index]
-  playIcon.style.color = "#FF1493"
-  pauseIcon.style.color = "#000000"
-  stopIcon.style.color = "#000000"
+  nextIcon.style.color="#FF1493"
+  prevIcon.style.color="#000000"
+  playIcon.style.color = "#000000";
+  pauseIcon.style.color = "#000000";
+  stopIcon.style.color = "#000000";
+
 })
 
 prevIcon.addEventListener("click", function(event){
@@ -122,9 +141,11 @@ prevIcon.addEventListener("click", function(event){
   jukebox.back()
   ShowMusicTitle.innerHTML = titles[index]
   ShowArtist.innerHTML = artists[index]
-  playIcon.style.color = "#FF1493"
-  pauseIcon.style.color = "#000000"
-  stopIcon.style.color = "#000000"
+  prevIcon.style.color="#FF1493";
+  nextIcon.style.color="#000000";
+  playIcon.style.color = "#000000";
+  pauseIcon.style.color = "#000000";
+  stopIcon.style.color = "#000000";
 })
 
 newSongButton.addEventListener("click", function(event) {
@@ -140,65 +161,68 @@ newSongButton.addEventListener("click", function(event) {
   artists.push(newArtist)
 })
 
+lBrown.addEventListener("click", function(event){
+  event.preventDefault()
+  var lbrownmusic = new Audio("Music/11 Lady Brown feat. Cise Starr.mp3")
+  var lbrownTitle = "Title: " + "Lady Brown"
+  var lbrownArtist= "Artist: " + "Nujabes"
+  songs.push(lbrownmusic)
+  titles.push(lbrownTitle)
+  artists.push(lbrownArtist)
+
+})
+
 mfDoom.addEventListener("click", function(event){
   event.preventDefault()
-  var mfdoomusic = new Audio("Jukebox/Music/mfdoom-vomitspit.mp3")
+  var mfdoomusic = new Audio("Music/mfdoom-vomitspit.mp3")
   var mfdoomTitle = "Title: " + "Vomitspit"
   var mfdoomArtist = "Artist: " + "MF Doom"
   songs.push(mfdoomusic)
   titles.push(mfdoomTitle)
   artists.push(mfdoomArtist)
-  mfDoom.style.color = "#FF1493"
+
 })
 
 kidCudi.addEventListener("click", function(event){
   event.preventDefault()
-  var DayNight = new Audio("Jukebox/Music/Kid Cudi and Crookers - Day 'n' Night.mp3")
+  var DayNight = new Audio("Music/Kid Cudi and Crookers - Day 'n' Night.mp3")
   var DayNightTitle = "Title: " + "Day /& Night"
   var DayNightArtist = "Artist: " + "Kid Cudi"
   songs.push(DayNight)
   titles.push(DayNightTitle)
   artists.push(DayNightArtist)
-  kidCudi.style.color = "#FF1493"
+
 })
 
 Gambino.addEventListener("click", function(event){
   event.preventDefault()
-  var childish = new Audio("Jukebox/Music/Do Ya Like.mp3")
+  var childish = new Audio("Music/Do Ya Like.mp3")
   var childishTitle = "Title: " + "Do Ya Like"
   var childishArtist = "Artist: " + "Childish Gambino"
   songs.push(childish)
   titles.push(childishTitle)
   artists.push(childishArtist)
-  Gambino.style.color = "#FF1493"
+
 })
 
 Baccono.addEventListener("click", function(event){
   event.preventDefault()
-  var gbaccano = new Audio("Jukebox/Music/Baccano! - Gun's and Roses.mp3")
+  var gbaccano = new Audio("Music/Baccano! - Gun's and Roses.mp3")
   var baccanoTitle = "Title: " + "Guns & Roses"
   var baccanoArtist = "Artist: " + "Baccono"
   songs.push(gbaccano)
   titles.push(baccanoTitle)
   artists.push(baccanoArtist)
-  Baccono.style.color = "#FF1493"
+
 })
 
 Systeme.addEventListener("click", function(event){
   event.preventDefault()
-  var mSysteme = new Audio("Jukebox/Music/Un Gaou A Oran.mp3")
+  var mSysteme = new Audio("Music/Un Gaou A Oran.mp3")
   var systemeTitle = "Title: " + "Guns & Roses"
   var systemeArtist = "Artist: " + "Baccano"
   songs.push(mSysteme)
   titles.push(systemeTitle)
   artists.push(systemeArtist)
-  Systeme.style.color = "#FF1493"
-})
 
-//   jukebox.play()
-// })
-//
-//
-//
-// var audio = new Audio("track.mp3")
-// audio.play()
+})

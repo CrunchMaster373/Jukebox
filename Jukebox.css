@@ -1,7 +1,7 @@
 h1 {
   text-align: center;
   font-family: 'Baloo Bhaina', cursive;
-  color: aliceblue;
+  color: snow;
   font-size: 3rem;
   text-transform: uppercase;
   margin-top: 0;
@@ -18,11 +18,57 @@ video {
   height: auto;
   z-index: -100;
   transform: translateX(-50%) translateY(-50%);
-  background: url("Jukebox/Coffee-Place/MP4/Coffee-Place.mp4");
+  background: url("Coffee-Place/MP4/Coffee-Place.mp4");
   background-size: cover;
   transition: 1s opacity;
 }
 
+.Symbols {
+  text-align: center;
+  padding-top: 400px;
+}
+
+#Box{
+  display: hidden;
+}
+#Box {
+  background: #FFF5EE;
+  padding: 0px 1px;
+  border-style: ridge;;
+  font: 16px sans-serif;
+  line-height: 1.5;
+  margin: .5em;
+  margin-left: 20em;
+  margin-right: 20em;
+  opacity: .8;
+}
+
+#Controls {
+  font-size: 1.5em;
+  margin-left: 15em;
+  margin-right: 15em;
+}
+
+#previous {
+  margin-right: 2em;
+  color: #FF1493;
+}
+#pause{
+  margin-right: 2em;
+  color: #FF1493;
+}
+#play{
+  margin-right: 2em;
+  color: #FF1493;
+}
+#stop{
+  margin-right: 2em;
+  color: #FF1493;
+}
+#next{
+  margin-right: 2em;
+  color: #FF1493;
+}
 
 
 @media (min-width: 400px) {
@@ -52,61 +98,6 @@ video {
   div{width:70%;}
 }
 @media screen and (max-device-width: 800px) {
-  html {background: url("Jukebox/Coffee-Place/MP4/Coffee-Place.mp4") #000 no-repeat center center fixed; }
+  html {background: url("Coffee-Place/MP4/Coffee-Place.mp4") #000 no-repeat center center fixed; }
   #bgvid { display: none; }
-}
-
-
-.Symbols {
-  text-align: center;
-  padding-top: 400px;
-}
-
-
-/*.symbols {
-  display: inline-block;
-  color: #fff;
-  text-decoration: none;
-  background:rgba(0,0,0,0.5);
-  padding: .5rem;
-  transition: .6s background;
-}
-.symbols:hover{
-  background:rgba(0,0,0,0.9);
-}*/
-#Box{
-  display: hidden;
-}
-#Box {
-  background: goldenrod;
-  padding: 0px 1px;
-  border-style: ridge;;
-  font: 16px sans-serif;
-  line-height: 1.5;
-  margin: .5em;
-  margin-left: 20em;
-  margin-right: 20em;
-}
-
-#Controls {
-  font-size: 1.5em;
-  margin-left: 15em;
-  margin-right: 15em;
-}
-
-
-#previous {
-  margin-right: 2em;
-}
-#pause{
-  margin-right: 2em;
-}
-#play{
-  margin-right: 2em;
-}
-#stop{
-  margin-right: 2em;
-}
-#next{
-  margin-right: 2em;
 }
