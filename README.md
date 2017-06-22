@@ -4,7 +4,7 @@
 
 Features:
 <li>Play, pause, stop, skip, and go to previous music</li>
-
+<br>
 See it deployed at:
 
 ## Technologies used
